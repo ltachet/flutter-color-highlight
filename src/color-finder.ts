@@ -1,6 +1,3 @@
-import * as vscode from "vscode";
-
-
 /**
  * @export
  * @param {string} txt
@@ -19,7 +16,7 @@ export async function findFromRGBO(txt: string) {
     while (match = regEx.exec(txt)) {
         const start = match.index;
         const end = start + match[0].length;
-        const color = match[1]
+        const color = match[1];
 
         result.push({
             start,
