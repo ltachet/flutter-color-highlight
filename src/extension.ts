@@ -8,8 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 		return;
 	}
 
-	vscode.window.onDidChangeActiveTextEditor(doHighlight, null, context.subscriptions);
-	vscode.workspace.onDidChangeTextDocument(doHighlight, null, context.subscriptions);
-	doHighlight();
+	let decorations = new Map<string, vscode.TextEditorDecorationType>();
 
+	vscode.workspace.onWillSaveTextDocument(() => { doHighlight(decorations); }, null, context.subscriptions);
 }
