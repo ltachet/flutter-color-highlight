@@ -8,7 +8,7 @@
  * }}
  */
 export async function findFromRGBO(txt: string) {
-    const regEx = /Color\.fromRGBO\((\d+, \d+, \d+, \d+\.\d+)\)/g;
+    const regEx = /Color\.fromRGBO\((\d{1,3}, \d{1,3}, \d{1,3}, \d{1,3}(\.\d)?)\)/g;
     let result = [];
 
     let match;
